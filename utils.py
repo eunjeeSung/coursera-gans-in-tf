@@ -27,3 +27,8 @@ def make_grid(images, grid_row):
     grid = tf.reshape(grid, (height, width))
 
     return grid
+
+# %%
+def get_noise(n_samples, z_dim):
+    return tf.random.normal([n_samples, z_dim])
+
