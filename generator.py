@@ -22,8 +22,10 @@ class Generator(tf.keras.Model):
             ]
         )
 
-    def forward(self, noise):
+    def call(self, noise):
         return self.gen(noise)
 
     def get_gen(self):
         return self.gen
+
+# %%
