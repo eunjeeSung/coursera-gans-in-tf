@@ -4,12 +4,9 @@ import matplotlib.pyplot as plt
 
 # %%
 def show_tensor_images(image_tensor, num_images=25, size=(1, 28, 28)):
-    image_tensor = tf.stop_gradient(image_tensor)
     image_unflat = tf.reshape(image_tensor, (-1, *size))
     image_grid = make_grid(image_unflat[:num_images], grid_row=5)
-    #plt.imshow(image_grid.permute(1, 2, 0).squeeze())
-    #plt.imshow(tf.transpose(image_grid, perm=(1, 2, 0)))
-    plt.imshow(image_grid)
+    plt.imshow(image_grid, cmap='gray')
     plt.show()
 
 # %%
